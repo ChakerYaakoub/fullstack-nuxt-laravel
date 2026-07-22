@@ -1,0 +1,5 @@
+{
+  "name": "nuxt-laravel",
+  "private": true,
+  "description": "Open frontend/ for the Nuxt app (or use ferra.code-workspace)"
+}
