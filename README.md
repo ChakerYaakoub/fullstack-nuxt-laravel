@@ -8,15 +8,7 @@ Three apps talk to one Laravel API + SQLite database.
 
 ## Demo video
 
-<p align="center">
-  <a href="https://youtu.be/OxZBNqGWvew" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.youtube.com/vi/OxZBNqGWvew/maxresdefault.jpg" alt="Watch the FERRA demo video" width="800" />
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://youtu.be/OxZBNqGWvew"><b>▶ Watch the demo on YouTube</b></a>
-</p>
+▶ [Watch the demo on YouTube](https://youtu.be/OxZBNqGWvew)
 
 ---
 
