@@ -6,6 +6,20 @@ Three apps talk to one Laravel API + SQLite database.
 
 ---
 
+## Demo video
+
+<p align="center">
+  <a href="https://youtu.be/OxZBNqGWvew" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.youtube.com/vi/OxZBNqGWvew/maxresdefault.jpg" alt="Watch the FERRA demo video" width="800" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://youtu.be/OxZBNqGWvew"><b>▶ Watch the demo on YouTube</b></a>
+</p>
+
+---
+
 ## Screenshots
 
 ### Shop (Nuxt client)
@@ -18,6 +32,9 @@ Three apps talk to one Laravel API + SQLite database.
 
 <p align="center"><b>Catalogue</b></p>
 <p align="center"><img src="./assets/shop-catalog.png" alt="Catalogue" width="800" /></p>
+
+<p align="center"><b>Product detail</b></p>
+<p align="center"><img src="./assets/shop-product.png" alt="Product detail" width="800" /></p>
 
 <p align="center"><b>Demande de devis</b></p>
 <p align="center"><img src="./assets/shop-quote.png" alt="Quote form" width="800" /></p>
