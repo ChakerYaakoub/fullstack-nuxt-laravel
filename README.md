@@ -10,43 +10,34 @@ Three apps talk to one Laravel API + SQLite database.
 
 ### Shop (Nuxt client)
 
-**Home**
+<p align="center"><b>Home</b></p>
+<p align="center"><img src="./assets/shop-home.png" alt="Shop home" width="800" /></p>
 
-![Shop home](./assets/shop-home.png)
+<p align="center"><b>Categories</b></p>
+<p align="center"><img src="./assets/shop-categories.png" alt="Categories" width="800" /></p>
 
-**Categories**
+<p align="center"><b>Catalogue</b></p>
+<p align="center"><img src="./assets/shop-catalog.png" alt="Catalogue" width="800" /></p>
 
-![Categories](./assets/shop-categories.png)
+<p align="center"><b>Demande de devis</b></p>
+<p align="center"><img src="./assets/shop-quote.png" alt="Quote form" width="800" /></p>
 
-**Catalogue**
+<p align="center"><b>Home (mobile)</b></p>
+<p align="center"><img src="./assets/shop-home-mobile.png" alt="Home mobile" width="320" /></p>
 
-![Catalogue](./assets/shop-catalog.png)
-
-**Demande de devis**
-
-![Quote form](./assets/shop-quote.png)
-
-**Home (mobile)**
-
-![Home mobile](./assets/shop-home-mobile.png)
-
-**Catalogue (mobile)**
-
-![Catalogue mobile](./assets/shop-catalog-mobile.png)
+<p align="center"><b>Catalogue (mobile)</b></p>
+<p align="center"><img src="./assets/shop-catalog-mobile.png" alt="Catalogue mobile" width="320" /></p>
 
 ### Admin (Vue panel)
 
-**Products**
+<p align="center"><b>Products</b></p>
+<p align="center"><img src="./assets/admin-products.png" alt="Admin products" width="800" /></p>
 
-![Admin products](./assets/admin-products.png)
+<p align="center"><b>Add product</b></p>
+<p align="center"><img src="./assets/admin-product-form.png" alt="Admin product form" width="800" /></p>
 
-**Add product**
-
-![Admin product form](./assets/admin-product-form.png)
-
-**Demande de devis**
-
-![Admin quotes](./assets/admin-quotes.png)
+<p align="center"><b>Demande de devis</b></p>
+<p align="center"><img src="./assets/admin-quotes.png" alt="Admin quotes" width="800" /></p>
 
 ---
 
