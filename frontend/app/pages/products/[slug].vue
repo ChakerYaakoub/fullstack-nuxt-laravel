@@ -95,14 +95,16 @@ function addToCart() {
 
     <div v-else-if="product" class="section product-page">
       <div class="container product-page__grid">
-        <div
-          class="visual"
-          :style="{ background: product.imageTone }"
-          aria-hidden="true"
-        >
-          <div class="visual__pattern" />
-          <div class="visual__glow" />
-          <p class="visual__label">{{ category?.name }}</p>
+        <div class="visual-wrap">
+          <div
+            class="visual"
+            :style="{ background: product.imageTone }"
+            aria-hidden="true"
+          >
+            <div class="visual__pattern" />
+            <div class="visual__glow" />
+            <p class="visual__label">{{ category?.name }}</p>
+          </div>
         </div>
 
         <div class="info animate-fade-up">
@@ -161,12 +163,20 @@ function addToCart() {
 <style scoped>
 .product-page__grid {
   display: grid;
-  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.visual-wrap {
+  width: 100%;
+  min-width: 0;
 }
 
 .visual {
   position: relative;
-  min-height: 260px;
+  width: 100%;
+  max-width: 100%;
   aspect-ratio: 4 / 3;
   border-radius: calc(var(--radius) + 4px);
   overflow: hidden;
@@ -193,6 +203,7 @@ function addToCart() {
   width: 65%;
   height: 65%;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.25), transparent 70%);
+  pointer-events: none;
 }
 
 .visual__label {
@@ -207,12 +218,20 @@ function addToCart() {
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-weight: 650;
+  font-weight: 600;
+}
+
+.info {
+  min-width: 0;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .info__title {
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   margin-bottom: 0.55rem;
+  overflow-wrap: anywhere;
 }
 
 .info__price {
@@ -224,7 +243,6 @@ function addToCart() {
 .info__desc {
   color: var(--color-zinc);
   margin-bottom: 1.5rem;
-  max-width: 36rem;
   line-height: 1.7;
 }
 
@@ -256,7 +274,7 @@ function addToCart() {
 
 .specs dd {
   margin: 0;
-  font-weight: 550;
+  font-weight: 500;
 }
 
 .actions {
@@ -265,7 +283,7 @@ function addToCart() {
   gap: 0.75rem;
 }
 
-@media (max-width: 560px) {
+@media (max-width: 640px) {
   .actions .btn {
     width: 100%;
   }
@@ -276,17 +294,20 @@ function addToCart() {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 960px) {
   .product-page__grid {
-    grid-template-columns: 1.05fr 1fr;
-    align-items: start;
-    gap: 2.5rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 3.5rem;
+    row-gap: 2rem;
+  }
+
+  .visual-wrap {
+    position: sticky;
+    top: calc(var(--header-h) + 1rem);
   }
 
   .visual {
-    position: sticky;
-    top: calc(var(--header-h) + 1rem);
-    min-height: 440px;
+    min-height: 0;
   }
 }
 </style>
