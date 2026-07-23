@@ -6,10 +6,55 @@ Three apps talk to one Laravel API + SQLite database.
 
 ---
 
+## Screenshots
+
+### Shop (Nuxt client)
+
+**Home**
+
+![Shop home](./assets/shop-home.png)
+
+**Categories**
+
+![Categories](./assets/shop-categories.png)
+
+**Catalogue**
+
+![Catalogue](./assets/shop-catalog.png)
+
+**Demande de devis**
+
+![Quote form](./assets/shop-quote.png)
+
+**Home (mobile)**
+
+![Home mobile](./assets/shop-home-mobile.png)
+
+**Catalogue (mobile)**
+
+![Catalogue mobile](./assets/shop-catalog-mobile.png)
+
+### Admin (Vue panel)
+
+**Products**
+
+![Admin products](./assets/admin-products.png)
+
+**Add product**
+
+![Admin product form](./assets/admin-product-form.png)
+
+**Demande de devis**
+
+![Admin quotes](./assets/admin-quotes.png)
+
+---
+
 ## Projects overview
 
 ```text
 Nuxt_Laravel/
+├── assets/     → README screenshots
 ├── frontend/   → Nuxt storefront (clients)
 ├── backend/    → Laravel API + SQLite + JWT
 └── admin/      → Vite Vue admin panel
@@ -125,79 +170,6 @@ npm run dev
 ```
 
 → http://localhost:5173 (or 5174)
-
----
-
-## Database relations (graph)
-
-Business tables (Laravel framework tables like `jobs`, `cache`, `sessions` omitted):
-
-```mermaid
-erDiagram
-  CATEGORIES ||--o{ PRODUCTS : "has many"
-  PRODUCTS ||--o{ CART_ITEMS : "in cart"
-  USERS ||--o| USERS : "JWT admin only"
-
-  CATEGORIES {
-    int id PK
-    string slug UK
-    string name
-    string short
-    text description
-    string accent
-  }
-
-  PRODUCTS {
-    int id PK
-    int category_id FK
-    string slug UK
-    string name
-    int price
-    string short_description
-    text description
-    string material
-    string finish
-    string dimensions
-    bool featured
-    string image_tone
-  }
-
-  CART_ITEMS {
-    int id PK
-    string session_id
-    int product_id FK
-    int quantity
-  }
-
-  QUOTE_REQUESTS {
-    int id PK
-    string name
-    string email
-    string phone
-    string category_slug "soft link to categories.slug"
-    text message
-    string status
-  }
-
-  USERS {
-    int id PK
-    string name
-    string email UK
-    string password
-  }
-```
-
-### Relations explained
-
-| From | To | Type | Notes |
-|------|-----|------|--------|
-| **categories** → **products** | One-to-many | FK `products.category_id` → `categories.id` (cascade delete) |
-| **products** → **cart_items** | One-to-many | FK `cart_items.product_id` → `products.id` (cascade delete) |
-| **cart_items** | — | Guest cart keyed by `session_id` (UUID in browser), unique `(session_id, product_id)` |
-| **quote_requests** → **categories** | Soft / logical | Stores `category_slug` (string), not a hard FK — admin resolves name by slug |
-| **users** | — | Admin accounts only; no link to cart or quotes in this demo |
-
-There is **no** `user_id` on cart or quotes: the storefront is guest-only; auth is admin-only.
 
 ---
 
